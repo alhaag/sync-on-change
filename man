@@ -1,0 +1,31 @@
+NAME
+    sync-on-change
+
+SYNOPSIS
+    Sinconiza modificações de arquivos localmente ou para um
+    servidor remoto.
+
+DESCRIPTION
+    Observa um diretório (recursivamente) para alterações de
+    arquivos e diretórios e realiza o sincronismo dessas
+    modificações no destino.
+    Para evitar executar o comando várias vezes quando uma
+    sequência de acontecimentos, o script aguarda um segundo
+    após a alteração. Se mais mudanças acontecem, o tempo
+    limite é estendido por um segundo novamente..
+
+EXAMPLES
+    $ onchange <source> <target>
+    $ onchange /var/www/html/project/ root@192.168.0.254:/var/www/html/project
+
+SEE ALSO
+    A list of related commands or functions.
+
+BUGS
+    List known bugs.
+
+AUTHOR
+   Andre Luiz Haag <andreluizhaag@gmail.com>.
+
+COPYRIGHT
+    Specify your copyright information.
