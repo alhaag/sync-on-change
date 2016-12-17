@@ -1,12 +1,12 @@
 # sync-on-change
 
-Sinconiza modificações de arquivos localmente ou para um servidor remoto.
+Sinconiza modificaÃ§Ãµes de arquivos localmente ou para um servidor remoto.
 
-Observa um diretório (recursivamente) para alterações de arquivos e diretórios e realiza o sincronismo dessas modificações no destino.
+Observa um diretÃ³rio (recursivamente) para alteraÃ§Ãµes de arquivos e diretÃ³rios e realiza o sincronismo dessas modificaÃ§Ãµes no destino.
 
-Para evitar executar o comando várias vezes quando uma sequência de acontecimentos, o script aguarda um segundo após a alteração. Se mais mudanças acontecem, o tempo limite é estendido por um segundo novamente.
+Para evitar executar o comando vÃ¡rias vezes quando uma sequÃªncia de acontecimentos ocorre, o script aguarda um segundo apÃ³s a alteraÃ§Ãµes. Se mais mudanÃ§as acontecem, o tempo limite Ã© estendido por um segundo novamente.
 
-## Dependências
+## DependÃªncias
 
  * bash
  * inotifywait (do pacote inotify-tools package).
@@ -16,20 +16,25 @@ Para instalar no Ubuntu:
 $ sudo apt-get install inotify-tools
 ```
 
-Caso a quantidade de arquvos watch files do sistema exceda alterar limite:
+Caso a quantidade de arquivos watch files do sistema exceda alterar limite:
 ```
-$ sudo sysctl fs.inotify.max_user_watches=500000
+$ sudo sysctl fs.inotify.max_user_watches=<quantidade_desejada>
 ```
 
-## Instalação
+## InstalaÃ§Ã£o
 ```
 $ make install
 ```
 
+## DesinstalaÃ§Ã£o
+```
+$ make uninstall
+```
+
 ## Como utilizar
 ```
-$ onchange <source> <target>
-$ onchange /var/www/html/project/ root@192.168.0.254:/var/www/html/project
+$ sync-on-change <source> <target>
+$ sync-on-change /var/www/html/project/ root@192.168.0.254:/var/www/html/project
 ```
 
 Para obter ajuda:
@@ -37,14 +42,12 @@ Para obter ajuda:
 $ man sync-on-change
 ```
 
-## Contribuição
+## ContribuiÃ§Ã£o
 
-Contribuições de melhoria sempre serão bem vindas. Para isso pode ser realizado um commit sobre um fork do projeto.
+ContribuiÃ§Ãµes de melhoria e correÃ§Ãµes serÃ£o bem vindas. Para isso pode ser realizado um commit sobre um fork do projeto.
 
 ## TODO:
 
-Opção para realizar o ssh-copy-id automaticamente.
+OpÃ§Ã£o para realizar o ssh-copy-id e liberar a transferÃªncia sem precisar informar senha vÃ¡rias vezes quando o destino for um servidor remoto.
 
-Validar parâmetros de entrada.
-
-Escrever o manual man
+Validar parÃ¢metros de entrada.
