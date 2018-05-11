@@ -15,7 +15,10 @@
 #    bash e inotifywait (do pacote inotify-tools package). No Ubuntu:
 #    $ sudo apt-get install inotify-tools
 #
-#    Caso a quantidade de arquvos watch files do sistema exceda alterar limite:
+#    O kernel armazena o inode e não o pathname. O consumo é de 540 bytes por
+#    Watch em um sistema de 32 bits. O dobro em 64 bits.
+#    Caso a quantidade de arquvos watch files do sistema será necessário alterar
+#    o limite:
 #    $ sudo sysctl fs.inotify.max_user_watches=500000
 #
 # Instalação:
